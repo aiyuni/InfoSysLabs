@@ -26,6 +26,9 @@ public class ProblemReport implements Serializable {
 	private String description;
 	private String recommendedSolution;
 	private String priority;
+	private String severity;
+	private String dateAssigned;
+	private String dateFixed;
 	
 	public int getNumber() {
 		return number;
@@ -89,6 +92,38 @@ public class ProblemReport implements Serializable {
 
 	public void setPriority(String priority) {
 		this.priority = priority;
+	}
+
+	public String getModulesAffected() {
+		return modulesAffected;
+	}
+
+	public void setModulesAffected(String modulesAffected) {
+		this.modulesAffected = modulesAffected;
+	}
+
+	public String getSeverity() {
+		return severity;
+	}
+
+	public void setSeverity(String severity) {
+		this.severity = severity;
+	}
+
+	public String getDateAssigned() {
+		return dateAssigned;
+	}
+
+	public void setDateAssigned(String dateAssigned) {
+		this.dateAssigned = dateAssigned;
+	}
+
+	public String getDateFixed() {
+		return dateFixed;
+	}
+
+	public void setDateFixed(String dateFixed) {
+		this.dateFixed = dateFixed;
 	}
 }
 
