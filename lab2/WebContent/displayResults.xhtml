@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Enter Software Problem Report</title>
+</h:head>
+<h:body>
+	<h2>Software Problem Report</h2>
+	<h:form>
+	<p>This is displayResults page... should have this update URL too...</p>
+		<table>
+			<tr>
+				<td>Project:</td>
+				<td><h:inputText value="#{problemReport.project.name}" readonly = "true"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Number:</td>
+				<td><h:inputText value="#{problemReport.number}" readonly = "true"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Date of Issue (dd/mm/yyyy)</td>
+				<td><h:inputText value="#{problemReport.date}" readonly = "true"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Originator: </td>
+				<td><h:inputText value="#{problemReport.originator}" readonly = "true"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>Title:</td>
+				<td><h:inputText value = "#{problemReport.project.title}" readonly = "true"></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Modules Affected: </td>
+				<td><h:inputText value = "#{problemReport.modules}" readonly = "true" ></h:inputText></td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><h:inputTextarea value = "#{problemReport.description}" readonly = "true"></h:inputTextarea></td>
+			</tr>
+			<tr>
+				<td>Recommended Solution:</td>
+				<td><h:inputTextarea value = "#{problemReport.recommendedSolution}" readonly = "true"></h:inputTextarea></td>
+			</tr>
+			<tr>
+				<td>Priority:</td>
+				<td><h:inputText value = "#{problemReport.priority}" readonly = "true"></h:inputText></td>
+			</tr>
+		</table>
+
+	</h:form>
+	
+	 <a href="./enterProblem.xhtml">Go back and re-enter problem</a>
+	 
+</h:body>
+</html>
