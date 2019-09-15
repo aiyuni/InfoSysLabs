@@ -4,6 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
 
+<!-- TODO: fix rest of variable names to have #{msg.varName} 
+			test support for CA locale???-->
 <h:head>
 	<title>Enter Software Problem Report</title>
 </h:head>
@@ -11,9 +13,10 @@
 	<h2>Software Problem Report</h2>
 	<h:form>
 		<p>enter stuff below</p>
+   		
 		<table>
 			<tr>
-				<td>Project:</td>
+				<td>#{msg.project}</td>
 				<td><h:inputText value="#{problemReport.project.name}"></h:inputText></td>
 			</tr>
 			<tr>

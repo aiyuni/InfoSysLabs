@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Guessing game</title>
+</h:head>
+<h:body>
+	<h3>Guess a number between 1 to 100</h3>
+	
+	<h:form>
+		<p> Try to guess a number between #{game.lowerBound} and #{game.upperBound}! </p>
+		<p>Input your guess: <h:inputText value="#{game.userInput}"></h:inputText></p>
+		<h:commandButton value="Enter" action="#{game.checkGuess}" />
+	
+		<p>Debug line: #{game.debug} and #{game.userInput} or #{game.lowerBound}</p>
+	
+	</h:form>
+	
+				<!--   <td>Table: Try to guess a number between #{game.lowerBound} and #{game.upperBound}!</td>
+				<td><h:inputText value="#{game.lowerBound}" readonly = "true"></h:inputText></td>
+				-->
+
+
+
+</h:body>
+</html>

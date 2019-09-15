@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#tooLow.xhtml" PATH="/tooLow.xhtml"
+  SHAPE="272,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#tooLow.xhtml:0" NAME="item"
+   PATH="/tooLow.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="low::#tooLow.xhtml" NAME="output"
+    PATH="/tooLow.xhtml" TARGET="rules:#tooLow.xhtml" TITLE="low" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="high::#tooHigh.xhtml" NAME="output1"
+    PATH="/tooHigh.xhtml" TARGET="rules:#tooHigh.xhtml" TITLE="high" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#tooHigh.xhtml" PATH="/tooHigh.xhtml"
+  SHAPE="512,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#tooHigh.xhtml:0" NAME="item"
+   PATH="/tooHigh.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="low::#tooLow.xhtml" NAME="output"
+    PATH="/tooLow.xhtml" TARGET="rules:#tooLow.xhtml" TITLE="low" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="high::#tooHigh.xhtml" NAME="output1"
+    PATH="/tooHigh.xhtml" TARGET="rules:#tooHigh.xhtml" TITLE="high" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#gameStart.xhtml" PATH="/gameStart.xhtml"
+  SHAPE="272,177,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#gameStart.xhtml:0" NAME="item"
+   PATH="/gameStart.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="low::#tooLow.xhtml" NAME="output"
+    PATH="/tooLow.xhtml" TARGET="rules:#tooLow.xhtml" TITLE="low" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="high::#tooHigh.xhtml" NAME="output1"
+    PATH="/tooHigh.xhtml" TARGET="rules:#tooHigh.xhtml" TITLE="high" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
