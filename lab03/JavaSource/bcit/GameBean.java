@@ -9,7 +9,9 @@ import javax.enterprise.context.ConversationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-
+/**TODO: Investigate why faces-config redirection doesn't do anything --->  this is because we need to do link redirection with a href, and not calling an action method
+ * 		'play again' still saves state, need to hard refresh the page to start a new game
+ */
 @Named("game")
 @ConversationScoped
 public class GameBean implements Serializable {

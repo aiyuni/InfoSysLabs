@@ -11,7 +11,8 @@
 	<h:body>
 		<p>Nice job! You guessed the number #{game.debug} correctly in #{game.attempts} guesses!</p>
 		<h:form>
-			<h:commandButton value="Play again" action="gameStart" />
+			<!--  <h:commandButton value="Play again" action="gameStart" />   why doesn't this work? -->
+			 <a href="./gameStart.xhtml">Play Again</a>
 		</h:form>
 	</h:body>
 	

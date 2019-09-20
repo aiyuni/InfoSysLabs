@@ -12,6 +12,10 @@ import javax.inject.Named;
 
 public class RandomNumberGenerator implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private java.util.Random random = new Random(System.currentTimeMillis());
 	
 	@Produces
