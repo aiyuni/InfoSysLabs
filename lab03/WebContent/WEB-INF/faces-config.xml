@@ -16,6 +16,10 @@
 			<from-outcome>high</from-outcome>
 			<to-view-id>/tooHigh.xhtml</to-view-id>
 		</navigation-case>
+		 <navigation-case>
+            <from-outcome>invalidEntry</from-outcome>
+            <to-view-id>/gameStart.xhtml</to-view-id>
+        </navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
@@ -28,6 +32,10 @@
 			<from-outcome>high</from-outcome>
 			<to-view-id>/tooHigh.xhtml</to-view-id>
 		</navigation-case>
+		 <navigation-case>
+            <from-outcome>invalidEntry</from-outcome>
+            <to-view-id>/tooLow.xhtml</to-view-id>
+        </navigation-case>
 	</navigation-rule>
 	
 		<navigation-rule>
@@ -40,6 +48,10 @@
 			<from-outcome>high</from-outcome>
 			<to-view-id>/tooHigh.xhtml</to-view-id>
 		</navigation-case>
+				 <navigation-case>
+            <from-outcome>invalidEntry</from-outcome>
+            <to-view-id>/tooHigh.xhtml</to-view-id>
+        </navigation-case>
 	</navigation-rule>
 	
 

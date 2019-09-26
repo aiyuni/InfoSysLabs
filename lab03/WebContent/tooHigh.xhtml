@@ -15,7 +15,8 @@
 		<p>Input your guess: <h:inputText value="#{game.userInput}"></h:inputText></p>
 		<h:commandButton value="Enter" action="#{game.checkGuess}" />
 	
-		<p>Debug line: #{game.debug} and ur input is: #{game.userInput} and lower bound is: #{game.lowerBound}</p>
+		<p>#{game.errorMessage}</p>
+		<!--   <p>Debug line: #{game.debug} and ur input is: #{game.userInput} and lower bound is: #{game.lowerBound}</p> -->
 	
 	</h:form>
 	

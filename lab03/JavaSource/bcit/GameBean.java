@@ -29,13 +29,15 @@ public class GameBean implements Serializable {
 	
 	private String debug = "initial";
 	private Integer attempts = 0;
+	private String errorMessage = "";
 	
-	@Inject @bcit.Random int randomNumber; 
+	@Inject @Random int randomNumber; 
 	@Inject Conversation conversation;
 	
 	@PostConstruct
 	public void init() {
 		//attempts = 0;
+		System.out.println("inside init");
 		if (attempts == 0) {
 			conversation.begin();
 		}
@@ -43,6 +45,7 @@ public class GameBean implements Serializable {
 	
 	@PreDestroy
 	public void destroy(){
+		System.out.println("inside destroy");
 		attempts = 0;
 		conversation.end();
 	}
@@ -50,17 +53,28 @@ public class GameBean implements Serializable {
 	public String checkGuess() {
 		System.out.println("inside checkGuess");
 		attempts++;
+		int userGuess;
+		try {
+			userGuess = Integer.parseInt(userInput);
+		}
+		catch(Exception e) {
+			errorMessage = "You did not enter a valid integer";
+			return "invalidEntry";
+		}
+		//int userGuess = Integer.parseInt(userInput);
 		
-		int userGuess = Integer.parseInt(userInput);
-		
-		if (randomNumber > Integer.parseInt(userInput)) {
-			lowerBound = Integer.parseInt(userInput) + 1;
+		if (userGuess < lowerBound || userGuess > upperBound) {
+			errorMessage = "You entered a number that is out of range.";
+			return "invalidEntry";
+		}
+		if (randomNumber > userGuess) {
+			lowerBound = userGuess + 1;
 			//userInput = "inside if";
 			debug = "correct number is: " + Integer.toString(randomNumber);
 			return "tooLow";
 		}
-		else if (randomNumber < Integer.parseInt(userInput)){
-			upperBound = Integer.parseInt(userInput) + 1;
+		else if (randomNumber < userGuess){
+			upperBound = userGuess - 1;
 			debug = "correct number is: " + Integer.toString(randomNumber);
 			//userInput = "too high";
 			return "tooHigh";
@@ -121,7 +135,12 @@ public class GameBean implements Serializable {
 	public void setAttempts(int attempts) {
 		this.attempts = attempts;
 	}
-	
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String text) {
+		errorMessage = text;
+	}
 	
 	
 	
