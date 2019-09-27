@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#enterProblem.xhtml"
+  PATH="/enterProblem.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#enterProblem.xhtml:0" NAME="item"
+   PATH="/enterProblem.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#displayResults.xhtml"
+    NAME="output" PATH="/displayResults.xhtml"
+    TARGET="rules:#displayResults.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#displayResults.xhtml"
+  PATH="/displayResults.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#displayResults.xhtml:0" NAME="item"
+   PATH="/displayResults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#enterProblem.xhtml" NAME="output"
+    PATH="/enterProblem.xhtml" TARGET="rules:#enterProblem.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
