@@ -40,7 +40,7 @@ public class ProblemReport implements Serializable {
 	private boolean scope;
 	
 	private Status priorityStatus;
-	private Status securityStatus;
+	private Status severityStatus;
 	
 	public enum Status {
         LOW, MEDIUM, HIGH, CRITICAL;
@@ -54,10 +54,10 @@ public class ProblemReport implements Serializable {
         conversation.begin();
     }
 
-    @PreDestroy
+   /* @PreDestroy
     public void destroy() {
         conversation.end();
-    }
+    } */
 	    
 	/**
 	 * Gets a map of all the status types based on the Status enum
@@ -66,7 +66,7 @@ public class ProblemReport implements Serializable {
 	public Map<String, Status> getStatusType() {
         Map<String, Status> map = new LinkedHashMap<>();
         for (Status status : Status.values()) {
-            map.put(status.toString(), status);  //label, value (enum.toString, "text")
+            map.put(status.toString().toLowerCase(), status);  //label, value (enum.toString, "text")
         }
         return map;
     }
@@ -190,15 +190,16 @@ public class ProblemReport implements Serializable {
 	public void setPriorityStatus(Status priorityStatus) {
 		this.priorityStatus = priorityStatus;
 	}
-
-	public Status getSecurityStatus() {
-		return securityStatus;
-	}
-
-	public void setSecurityStatus(Status securityStatus) {
-		this.securityStatus = securityStatus;
-	}
 	
+	public Status getSeverityStatus() {
+        return severityStatus;
+    }
+
+    public void setSeverityStatus(Status severityStatus) {
+        this.severityStatus = severityStatus;
+    }
+
+
 	public String submit() {
 		return "success";
 	}
