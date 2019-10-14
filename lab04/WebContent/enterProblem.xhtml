@@ -44,13 +44,13 @@
         
         <table>
             <tr>
-                <td>#{msgs.description}<br></br><h:inputTextarea rows="8" cols="90" value="#{problemReports.description}"></h:inputTextarea></td>
+                <td>#{msgs.description}<br></br><h:inputTextarea rows="5" cols="50" value="#{problemReports.description}"></h:inputTextarea></td>
             </tr>
             <tr>
                 <td><h:selectBooleanCheckbox value="#{problemReports.scope}">In Scope</h:selectBooleanCheckbox></td>
             </tr>
             <tr>
-                <td>#{msgs.recommendedSolution}<br></br><h:inputTextarea rows="8" cols="90" value="#{problemReports.recommendedSolution}"></h:inputTextarea></td>
+                <td>#{msgs.recommendedSolution}<br></br><h:inputTextarea rows="5" cols="50" value="#{problemReports.recommendedSolution}"></h:inputTextarea></td>
             </tr>
         </table>
         <table>
@@ -60,8 +60,8 @@
                         <f:selectItems value="#{problemReports.statusType}"/>
                     </h:selectOneMenu>
                 </td>
-                <td>#{msgs.security}
-                    <h:selectOneMenu value="#{problemReports.securityStatus}">
+                <td>#{msgs.severity}
+                    <h:selectOneMenu value="#{problemReports.severityStatus}">
                         <f:selectItems value="#{problemReports.statusType}"/>
                     </h:selectOneMenu>
                 </td>

@@ -38,17 +38,10 @@ public class GameBean implements Serializable {
 	public void init() {
 		//attempts = 0;
 		System.out.println("inside init");
-		if (attempts == 0) {
-			conversation.begin();
-		}
+		conversation.begin();
+		debug = "ur number is: " + randomNumber;
 	}
 	
-	@PreDestroy
-	public void destroy(){
-		System.out.println("inside destroy");
-		attempts = 0;
-		conversation.end();
-	}
 	
 	public String checkGuess() {
 		System.out.println("inside checkGuess");
@@ -81,7 +74,9 @@ public class GameBean implements Serializable {
 		}
 		else {
 			debug = "" + randomNumber;
+			conversation.end();
 			return "correctGuess";
+			
 		}
 		//debug = Integer.toString(randomNumber);
 	    //return "tooHigh";
