@@ -1,7 +1,6 @@
 package bcit;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -27,7 +26,7 @@ public class ProblemReport implements Serializable {
 	 */
 	//private static final long serialVersionUID = 1L;
 
-	private int number;  //use Integer here
+	private Integer number;  //use Integer here
 	private String date; //use String here if Date doesn't work
 	private String originator;
 	private String modulesAffected;
@@ -80,11 +79,11 @@ public class ProblemReport implements Serializable {
 		}
 	}
 	
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 	
-	public void setNumber(int num) {
+	public void setNumber(Integer num) {
 		this.number = num;
 	}
 	
@@ -206,6 +205,11 @@ public class ProblemReport implements Serializable {
 	
     public String edit() {
         return "edit";
+    }
+    
+    public String enterNewProblem() {
+        conversation.end();
+        return "new";
     }
 }
 

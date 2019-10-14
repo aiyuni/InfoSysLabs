@@ -64,9 +64,11 @@
             </tr>
         </table>
         
-	    <h:commandLink value = "Edit current problem" action = "#{problemReports.edit}"></h:commandLink> 
+	    <h:commandButton value = "Edit current problem" action = "#{problemReports.edit}"></h:commandButton> 
 		<p></p>
-		<a href="./enterProblem.xhtml">Enter a new problem</a>
+		<!-- <a href="./enterProblem.xhtml">Enter a new problem</a> -->
+		<h:commandButton value="Enter New Problem"
+				action="#{problemReports.enterNewProblem}"></h:commandButton>
 	   
 
 	</h:form>

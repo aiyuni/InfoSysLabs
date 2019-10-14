@@ -17,5 +17,11 @@
     PATH="/enterProblem.xhtml" TARGET="rules:#enterProblem.xhtml"
     TITLE="edit" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#displayResults.xhtml:1" NAME="item1"
+   PATH="/displayResults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="new::#enterProblem.xhtml" NAME="output"
+    PATH="/enterProblem.xhtml" TARGET="rules:#enterProblem.xhtml"
+    TITLE="new" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>
