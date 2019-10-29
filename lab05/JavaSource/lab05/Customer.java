@@ -9,43 +9,42 @@ import javax.inject.Named;
 @RequestScoped
 public class Customer implements Serializable {
 	
-	private int customerID;
-	private String firstName = "asd";
-	private String lastName;
-	private String address;
-	private String state;
-	private String city;
-	private String zipCode;
-	private String phone;
-	private String email;
-	
-	public Customer() {
-		
-	}
-	
-	
-	public Customer(int customerID, String firstName, String lastName, String address, String state, String city, String zipCode,
-			String phone, String email) {
-		
-		this.customerID = customerID;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.state = state; 
-		this.city = city;
-		this.zipCode = zipCode;
-		this.phone = phone;
-		this.email = email;
-		
-	}
-	
+	private int customerId;
 
-	public int getCustomerID() {
-		return customerID;
+	private String firstName;
+    private String lastName;
+    private String middleName;
+    private String firstAddress;
+    private String secondAddress;
+    private String city;
+    private String state;
+    private String zipCode;
+    private String phone;
+    private String email;
+
+    public Customer() {}
+
+    public Customer(int customerId, String firstName, String lastName, String middleName, String firstAddress,
+                    String secondAddress, String city, String state, String zipCode, String phone, String email) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.firstAddress = firstAddress;
+        this.secondAddress = secondAddress;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phone = phone;
+        this.email = email;
+    }
+	
+    public int getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomerID(int customerID) {
-		this.customerID = customerID;
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getFirstName() {
@@ -64,20 +63,28 @@ public class Customer implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getMiddleName() {
+		return middleName;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
 
-	public String getState() {
-		return state;
+	public String getFirstAddress() {
+		return firstAddress;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setFirstAddress(String firstAddress) {
+		this.firstAddress = firstAddress;
+	}
+
+	public String getSecondAddress() {
+		return secondAddress;
+	}
+
+	public void setSecondAddress(String secondAddress) {
+		this.secondAddress = secondAddress;
 	}
 
 	public String getCity() {
@@ -86,6 +93,14 @@ public class Customer implements Serializable {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getZipCode() {
