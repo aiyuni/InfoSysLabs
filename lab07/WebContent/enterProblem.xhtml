@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<!-- TODO: fix rest of variable names to have #{msg.varName} 
+			test support for CA locale???-->
+<h:head>
+	<title>Enter Software Problem Report</title>
+</h:head>
+<h:body>
+	<h2>Software Problem Report</h2>
+	<h:form>
+		<p>enter stuff below</p>
+   		
+		<table>
+         	 <tr>
+                <td rowspan="2"><p>#{problemReports.title}</p></td>
+                <td>#{msgs.number}</td>
+                <td><h:inputText converterMessage="Please enter digits only." id="number" label="number" required="true" size="10" value="#{problemReports.number}"></h:inputText></td>
+            </tr>
+            <tr>
+                <td>#{msgs.dateOfIssue}</td>
+                <td><h:inputText size="20" value="#{problemReports.date}"></h:inputText></td>
+            </tr>
+            <tr>
+                <td>#{msgs.project}<h:inputText size="40" value="#{problemReports.project.name}"></h:inputText></td>
+                <td colspan="2">#{msgs.originator}<h:inputText value="#{problemReports.originator}"></h:inputText></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>#{msgs.title}</td>
+                <td><h:inputText size="85" value="#{problemReports.project.title}"></h:inputText></td>
+            </tr>
+           <tr>
+                <td>#{msgs.modulesAffected}</td>
+                <td><h:inputText size="85" value="#{problemReports.modules}"></h:inputText></td>
+            </tr> 
+        </table>
+        
+        
+        <table>
+            <tr>
+                <td>#{msgs.description}<br></br><h:inputTextarea rows="5" cols="50" value="#{problemReports.description}"></h:inputTextarea></td>
+            </tr>
+            <tr>
+                <td><h:selectBooleanCheckbox value="#{problemReports.scope}">In Scope</h:selectBooleanCheckbox></td>
+            </tr>
+            <tr>
+                <td>#{msgs.recommendedSolution}<br></br><h:inputTextarea rows="5" cols="50" value="#{problemReports.recommendedSolution}"></h:inputTextarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+              <td>#{msgs.priority}
+                    <h:selectOneMenu value="#{problemReports.priorityStatus}">
+                        <f:selectItems value="#{problemReports.statusType}"/>
+                    </h:selectOneMenu>
+                </td>
+                <td>#{msgs.severity}
+                    <h:selectOneMenu value="#{problemReports.severityStatus}">
+                        <f:selectItems value="#{problemReports.statusType}"/>
+                    </h:selectOneMenu>
+                </td>
+                
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>#{msgs.dateAssigned}<h:inputText size="25" value="#{problemReports.dateAssigned}"></h:inputText></td>
+                <td>#{msgs.dateFixed}<h:inputText size="25" value="#{problemReports.dateFixed}"></h:inputText></td>
+            </tr>
+        </table>
+       
+		<p>
+			<h:commandButton value="Submit"
+				action="#{problemReports.submit}"></h:commandButton>
+		</p>
+		
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <h:head>
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+	hello world
+	
+		<p:dataTable value="#{supplierController.getAllSuppliers()}" var="book">
+		  <p:column headerText="Name">
+                    <h:outputText value="#{book.supplierName}"/>
+                </p:column>
+                  <p:column headerText="SupplierAddress">
+                    <h:outputText value="#{book.address}"/>
+                </p:column>
+		</p:dataTable>
+		
+		<h:panelGrid columns="2" cellpadding="5">
+			<p:outputLabel value="First Name ID" />
+			<p:inputText value="#{supplierController.supplier.supplierId}"></p:inputText>
+			<p:outputLabel value="FULL Name" />
+			<p:inputText value="#{supplierController.supplier.supplierName}"></p:inputText>
+			<p:outputLabel value="address" />
+			<p:inputText value="#{supplierController.supplier.address}"></p:inputText>
+			<p:outputLabel></p:outputLabel>
+			<p:commandButton value="Save"
+				action="#{supplierController.saveSupplier(supplierController.supplier)}"></p:commandButton>
+		</h:panelGrid>
+		
+	</h:form>
+
+
+
+</h:body>
+</html>

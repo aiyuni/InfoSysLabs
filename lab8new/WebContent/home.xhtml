@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:dataTable value="#{employeeController.getAllEmployees()}" var="book">
+		  <p:column headerText="Name">
+                    <h:outputText value="#{book.firstName}"/>
+                </p:column>
+                	  <p:column headerText="lastnameName">
+                    <h:outputText value="#{book.lastName}"/>
+                </p:column>
+		</p:dataTable>
+		
+		<p:dataTable value="#{supplierController.getAllSuppliers()}" var="supplier">
+		
+		  <p:column headerText="Supplier Name">
+              <h:outputText value = "#{supplier.supplierName}"/>
+		  </p:column>
+		  
+		  <p:column headerText="Contact Name">
+              <h:outputText value = "#{supplier.contactName}"/>
+		  </p:column>
+		  
+		  <p:column headerText="Contact Title">
+              <h:outputText value = "#{supplier.contactTitle}"/>
+		  </p:column>
+		  
+		  <p:column headerText="Address">
+              <h:outputText value="#{supplier.address}"/>
+          </p:column>
+          <p:column headerText="City">
+              <h:outputText value="#{supplier.city}"/>
+          </p:column>
+          <p:column headerText="Postal Code">
+              <h:outputText value="#{supplier.postalCode}"/>
+          </p:column>
+          <p:column headerText="State Or Province">
+              <h:outputText value="#{supplier.stateOrProvince}"/>
+          </p:column>
+          <p:column headerText="Country">
+              <h:outputText value="#{supplier.country}"/>
+          </p:column>
+          <p:column headerText="PhoneNumber">
+              <h:outputText value="#{supplier.phoneNumber}"/>
+          </p:column>
+          <p:column headerText="Fax Number">
+              <h:outputText value="#{supplier.faxNumber}"/>
+          </p:column>
+          <p:column headerText="Payment Terms">
+              <h:outputText value="#{supplier.paymentTerms}"/>
+          </p:column>
+          <p:column headerText="Email Address">
+              <h:outputText value="#{supplier.emailAddress}"/>
+          </p:column>
+          <p:column headerText="Notes">
+              <h:outputText value="#{supplier.notes}"/>
+          </p:column>
+          
+		</p:dataTable>
+		
+		
+		<h:panelGrid columns="2" cellpadding="5">
+			<p:outputLabel value="First Name" />
+			<p:inputText value="#{employeeController.employee.firstName}"></p:inputText>
+			<p:outputLabel value="Last Name" />
+			<p:inputText value="#{employeeController.employee.lastName}"></p:inputText>
+			<p:outputLabel value="salary" />
+			<p:inputText value="#{employeeController.employee.salary}"></p:inputText>
+			<p:outputLabel></p:outputLabel>
+			<p:commandButton value="Save"
+				action="#{employeeController.saveEmployee(employeeController.employee)}"></p:commandButton>
+			<p:commandButton value="Remove"
+				action="#{employeeController.removeEmployee(employeeController.employee)}"></p:commandButton>
+		</h:panelGrid>
+		
+		<!--  why is redirection not working? -->
+		<p:commandButton value = "Add Supplier!" action ="addSupplier?faces-redirect = true"></p:commandButton>  
+	</h:form>
+</h:body>
+</html>

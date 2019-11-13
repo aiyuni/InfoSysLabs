@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Enter Software Problem Report</title>
+</h:head>
+<h:body>
+	<h2>Software Problem Report</h2>
+	<h:form>
+	<p>This is displayResults page... should have this update URL too...</p>
+		<table>
+         	 <tr>
+                <td rowspan="2"><p>#{problemReports.title}</p></td>
+                <td>#{msgs.number}</td>
+                <td><h:inputText size="10" value="#{problemReports.number}" readonly = "true"></h:inputText></td>
+            </tr>
+            <tr>
+                <td>#{msgs.dateOfIssue}</td>
+                <td><h:inputText size="20" value="#{problemReports.date}" readonly = "true" ></h:inputText></td>
+            </tr>
+            <tr>
+                <td>#{msgs.project}<h:inputText size="40" value="#{problemReports.project.name}" readonly = "true"></h:inputText></td>
+                <td colspan="2">#{msgs.originator}<h:inputText value="#{problemReports.originator}" readonly = "true"></h:inputText></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>#{msgs.title}</td>
+                <td><h:inputText size="85" value="#{problemReports.project.title}" readonly = "true"></h:inputText></td>
+            </tr>
+           <tr>
+                <td>#{msgs.modulesAffected}</td>
+                <td><h:inputText size="85" value="#{problemReports.modules}" readonly = "true"></h:inputText></td>
+            </tr> 
+        </table>
+        
+        
+        <table>
+            <tr>
+                <td>#{msgs.description}<br></br><h:inputTextarea rows="8" cols="90" value="#{problemReports.description}" readonly = "true"></h:inputTextarea></td>
+            </tr>
+			 <tr>
+                <td><h:selectBooleanCheckbox value="#{problemReports.scope}" disabled = "true">In Scope</h:selectBooleanCheckbox></td>
+            </tr>
+     
+            <tr>
+                <td>#{msgs.recommendedSolution}<br></br><h:inputTextarea rows="8" cols="90" value="#{problemReports.recommendedSolution}" readonly = "true"></h:inputTextarea></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>#{msgs.priority}<h:inputText size="10" readonly="true" value="#{problemReports.priorityStatus}"></h:inputText></td>
+                <td>#{msgs.severity}<h:inputText size="10" readonly="true"  value="#{problemReports.severityStatus}"></h:inputText></td>
+            </tr>
+        </table>
+     
+        <table>
+            <tr>
+                <td>#{msgs.dateAssigned}<h:inputText size="25" value="#{problemReports.dateAssigned}" readonly = "true"></h:inputText></td>
+                <td>#{msgs.dateFixed}<h:inputText size="25" value="#{problemReports.dateFixed}" readonly = "true"></h:inputText></td>
+            </tr>
+        </table>
+        
+	    <h:commandButton value = "Edit current problem" action = "#{problemReports.edit}"></h:commandButton> 
+		<p></p>
+		<!-- <a href="./enterProblem.xhtml">Enter a new problem</a> -->
+		<h:commandButton value="Enter New Problem"
+				action="#{problemReports.enterNewProblem}"></h:commandButton>
+	   
+
+	</h:form>
+	
+</h:body>
+</html>
