@@ -11,54 +11,54 @@
 <h:body>
 	<h:form>
 		
-		<h:dataTable value="#{supplierController.supplierList}" var="supplier">
+		<p:dataTable value="#{supplierController.supplierList}" var="supplier">
 		
-		  <h:column headerText="Supplier Name">
+		  <p:column headerText="Supplier Name">
               <h:inputText value = "#{supplier.supplierName}"/>
-		  </h:column>
+		  </p:column>
 		  
-		  <h:column headerText="Contact Name">
+		  <p:column headerText="Contact Name">
               <h:inputText value = "#{supplier.contactName}"/>
-		  </h:column>
+		  </p:column>
 		  
-		  <h:column headerText="Contact Title">
+		  <p:column headerText="Contact Title">
               <h:inputText value = "#{supplier.contactTitle}"/>
-		  </h:column>
+		  </p:column>
 		  
-		  <h:column headerText="Address">
+		  <p:column headerText="Address">
               <h:inputText value="#{supplier.address}"/>
-          </h:column>
-          <h:column headerText="City">
+          </p:column>
+          <p:column headerText="City">
               <h:inputText value="#{supplier.city}"/>
-          </h:column>
-          <h:column headerText="Postal Code">
+          </p:column>
+          <p:column headerText="Postal Code">
               <h:inputText value="#{supplier.postalCode}"/>
-          </h:column>
-          <h:column headerText="State Or Province">
+          </p:column>
+          <p:column headerText="State Or Province">
               <h:inputText value="#{supplier.stateOrProvince}"/>
-          </h:column>
-          <h:column headerText="Country">
+          </p:column>
+          <p:column headerText="Country">
               <h:inputText value="#{supplier.country}"/>
-          </h:column>
-          <h:column headerText="PhoneNumber">
+          </p:column>
+          <p:column headerText="PhoneNumber">
               <h:inputText value="#{supplier.phoneNumber}"/>
-          </h:column>
-          <h:column headerText="Fax Number">
+          </p:column>
+          <p:column headerText="Fax Number">
               <h:inputText value="#{supplier.faxNumber}"/>
-          </h:column>
-          <h:column headerText="Payment Terms">
+          </p:column>
+          <p:column headerText="Payment Terms">
               <h:inputText value="#{supplier.paymentTerms}"/>
-          </h:column>
-          <h:column headerText="Email Address">
+          </p:column>
+          <p:column headerText="Email Address">
               <h:inputText value="#{supplier.emailAddress}"/>
-          </h:column>
-          <h:column headerText="Notes">
+          </p:column>
+          <p:column headerText="Notes">
               <h:inputText value="#{supplier.notes}"/>
-          </h:column>
+          </p:column>
          
-		</h:dataTable>
-				<h:commandButton value="Update Supplier"
-				action="#{supplierController.updateSupplier()}"></h:commandButton>
+		</p:dataTable>
+				<p:commandButton value="Update Supplier"
+				action="#{supplierController.updateSupplier()}"></p:commandButton>
 	</h:form>
 	
 	<h:form>
