@@ -25,6 +25,7 @@ public class SupplierService {
 	public void addSupplier(Supplier emp) {
 
 		em.persist(emp);
+		supplierList.add(emp);
 
 	}
 	
@@ -34,8 +35,8 @@ public class SupplierService {
     
     public void removeSupplier(Supplier supplier) {
         //attach product
-      //  supplier = find(supplier.getSupplierId());
-       // em.remove(supplier);
+        supplier = find(supplier.getSupplierId());
+        em.remove(supplier);
     }
     
     public void merge(Supplier supplier) {
@@ -50,9 +51,13 @@ public class SupplierService {
         for (int i=0; i < suparray.length; i++) {
             suparray[i] = suppliers.get(i);
         }
+        ArrayList<Supplier> tempSupplierList = new ArrayList<Supplier>();
+        for (int i = 0; i <suparray.length; i++) {
+        	tempSupplierList.add(suparray[i]);
+        }
         List<Supplier> list = Arrays.asList(suparray);
-        supplierList = list;
-        return list;
+        supplierList = tempSupplierList;
+        return tempSupplierList;
     }
     
 }

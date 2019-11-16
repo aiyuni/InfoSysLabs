@@ -12,7 +12,10 @@
 	<h:form>
 		
 		<p:dataTable value="#{supplierController.supplierList}" var="supplier">
-		
+		  <p:column headerText="Supplier Id">
+			<p:inputText value="#{supplier.supplierId}" disabled = "true">
+			</p:inputText>
+			</p:column>
 		  <p:column headerText="Supplier Name">
               <h:inputText value = "#{supplier.supplierName}"/>
 		  </p:column>
@@ -61,6 +64,7 @@
 				action="#{supplierController.updateSupplier()}"></p:commandButton>
 	</h:form>
 	
+	<br/>
 	<h:form>
 		<h:panelGrid columns="2" cellpadding="5">
 			<p:outputLabel value="Supplier Name]" />
@@ -90,10 +94,21 @@
 			<p:outputLabel value="Notes" />
 			<p:inputText value="#{supplierController.supplier.notes}"></p:inputText>
 			<p:outputLabel></p:outputLabel>
-			<p:commandButton value="Save"
+			<p:commandButton value="Add Supplier" ajax = "false"
 				action="#{supplierController.saveSupplier(supplierController.supplier)}"></p:commandButton>
-			<p:commandButton value="Remove"
-				action="#{employeeController.removeEmployee(employeeController.employee)}"></p:commandButton>
+		</h:panelGrid>
+	</h:form>
+	
+	<br/>
+	<h:form>
+		<h:panelGrid columns="2" cellpadding="5">
+			<p:outputLabel value="Delete by Supplier Id" />
+			<p:inputText value="#{supplierController.supplier.supplierId}"></p:inputText>
+			<p:commandButton value="Remove Supplier" ajax="false"
+				action="#{supplierController.removeSupplier(supplierController.supplier)}"></p:commandButton>
+				<br/>
+			<p:commandButton value="Go Back To View Page" 
+				action="home.xhtml"></p:commandButton>
 		</h:panelGrid>
 	</h:form>
 </h:body>
