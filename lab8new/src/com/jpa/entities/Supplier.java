@@ -21,9 +21,10 @@ public class Supplier implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	//these annotations are necessary! auto generate ID, otherwise id will be null. 
-	@TableGenerator(name = "supplier_gen", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_val", allocationSize = 1, pkColumnValue = "employee_gen")
+	//@TableGenerator(name = "supplier_gen", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_val", allocationSize = 1, pkColumnValue = "employee_gen")
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE, generator = "supplier_gen")
+	@Column(name="SupplierId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int supplierId;
 	
 	@Column(name="Address")
@@ -77,6 +78,23 @@ public class Supplier implements Serializable {
 	private String supplierName;
 
     public Supplier() {
+    }
+    
+    public Supplier(Supplier sup) {
+    	this.address = sup.address;
+    	this.city = sup.city;
+    	this.contactName = sup.contactName;
+    	this.contactTitle = sup.contactTitle;
+    	this.country = sup.country;
+    	this.emailAddress = sup.emailAddress;
+    	this.faxNumber = sup.faxNumber;
+    	this.notes = sup.notes;
+    	this.paymentTerms = sup.paymentTerms;
+    	this.phoneNumber = sup.phoneNumber;
+    	this.postalCode = sup.postalCode;
+    	this.stateOrProvince = sup.stateOrProvince;
+    	this.supplierId = sup.supplierId;
+    	this.supplierName = sup.supplierName;
     }
 
 	public String getAddress() {
@@ -198,5 +216,9 @@ public class Supplier implements Serializable {
                 + ", " + city + ", " + postalCode + ", " + stateOrProvince + ", " + country + ", " + phoneNumber
                 + ", " + faxNumber + ", " + paymentTerms + ", " + emailAddress + ", " + notes;
     }
+    
+ /*   public Object clone()throws CloneNotSupportedException{  
+    	return super.clone();  
+    	}  */
 
 }

@@ -37,6 +37,7 @@ public class SupplierService {
         //attach product
         supplier = find(supplier.getSupplierId());
         em.remove(supplier);
+        //supplierList.remove(supplier);
     }
     
     public void merge(Supplier supplier) {

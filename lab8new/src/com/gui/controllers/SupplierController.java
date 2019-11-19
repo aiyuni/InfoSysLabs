@@ -56,8 +56,11 @@ public class SupplierController implements Serializable {
 	}
  
 	public void saveSupplier(Supplier emp) {
-		service.addSupplier(emp);
-		supplierList.add(emp);
+		
+		Supplier newSupplier = new Supplier(emp);
+
+		service.addSupplier(newSupplier);
+		supplierList.add(newSupplier);
 	}
 	
 	public void removeSupplier(Supplier emp) {
